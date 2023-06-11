@@ -1,0 +1,1 @@
+import{i as e}from"./index-c98f9125.js";const a=t=>e.request({url:"api/article/add",method:"post",data:t}),i=()=>e.request({url:"api/article/all",method:"get"}),l=t=>e.request({url:"api/article/delete/"+t.id,method:"get",params:t}),s=t=>e.request({url:"api/article/edit",method:"post",data:t});export{i as A,l as a,a as b,s as c};

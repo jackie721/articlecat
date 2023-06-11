@@ -30,5 +30,9 @@ export default defineConfig({
         additionalData:'@import "./src/style/main.scss";'
       }
     }
+  },
+  base:"/articlecat/",
+  build: {
+    outDir: "docs"
   }
 })
