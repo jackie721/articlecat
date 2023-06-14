@@ -5,7 +5,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 // 通过export 输出
 // 如何使用
 // export default 默认输出
-import Index from '@/views/static/index.vue'
+import Index from '@/views/static/Newaricle2.vue'
 import LayoutAdmin from '@/layout/admin/index.vue'
 //白名单
 const whiteList = [

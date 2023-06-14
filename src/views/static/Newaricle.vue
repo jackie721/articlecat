@@ -23,28 +23,30 @@
           <el-input v-model="formInline.id" placeholder="请输入Id"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="Find">查询</el-button>
-          <el-button type="warning" @click="toAdd">添加</el-button>
+          <el-button type="primary"   @click="Find">查询</el-button>
+          <el-button type="warning"  @click="toAdd">添加</el-button>
         </el-form-item>
       </el-form>
     </div>
     <!-- 表格 -->
-    <el-table :data="articleCats" stripe style="width: 100%">
+    <el-table :data="articleCats" stripe style="width: 100%" 
+    :header-cell-style="{ textAlign: 'center' }"
+    :cell-style="{ textAlign: 'center' }">
       <!-- 列定义 -->
-      <el-table-column fixed prop="id" label="分类id" width="120" sortable />
-      <el-table-column prop="catName" label="类别名称" width="200" />
-      <el-table-column prop="createTime" label="创建时间" width="250" />
-      <el-table-column prop="updateTime" label="更新时间" width="250" />
-      <el-table-column fixed="right" label="操作" width="300">
+      <el-table-column fixed prop="id" label="分类id"  sortable />
+      <el-table-column prop="catName" label="类别名称"  />
+      <el-table-column prop="createTime" label="创建时间"  />
+      <el-table-column prop="updateTime" label="更新时间"  />
+      <el-table-column fixed="right" label="操作" >
         <template #default="scope">
-          <el-button type="primary" size="small" @click="toEdit(scope.row)" plain
+          <el-button type="primary" size="default" @click="toEdit(scope.row)" round
             >更新</el-button
           >
           <!-- 更新按钮 -->
-          <el-button  type="primary" size="small" @click="del(scope.row.id)" plain
+          <el-button  type="danger" size="default" @click="del(scope.row.id)" round
             >删除</el-button
           >
-          <el-button  type="primary" size="small" @click="addTask()" plain
+          <el-button  type="success" size="default" @click="addTask()" round
             >导航</el-button
           >
           <!-- 删除按钮 -->

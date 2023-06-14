@@ -30,7 +30,9 @@
       </el-form>
     </div>
     <!-- 表格 -->
-    <el-table :data="articleCats" stripe style="width: 100%">
+    <el-table :data="articleCats" stripe style="width: 100%" 
+    :header-cell-style="{ textAlign: 'center' }"
+    :cell-style="{ textAlign: 'center' }">
       <!-- 列定义 -->
       <el-table-column fixed prop="id" label="id" width="80" sortable />
       <el-table-column prop="title" label="文章标题" width="120" />
@@ -40,17 +42,17 @@
       <el-table-column prop="updateTime" label="更新时间" width="200" />>
       <el-table-column fixed="right" label="操作" width="300">
         <template #default="scope">
-          <el-button  type="primary" size="small" @click="toEdit(scope.row)" plain
+          <el-button  type="primary" size="default" @click="toEdit(scope.row)" round
             >更新</el-button
           >
           <!-- 更新按钮 -->
-          <el-button type="primary" size="small" @click="del(scope.row.id)" plain
+          <el-button type="danger" size="default" @click="del(scope.row.id)" round
             >删除</el-button
           >
           <el-button
-            type="primary"
-            size="small"
-            @click="daohang(scope.row)" plain
+            type="success"
+            size="default"
+            @click="daohang(scope.row)" round
             >查看</el-button
           >
         </template>

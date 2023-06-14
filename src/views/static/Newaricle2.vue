@@ -16,12 +16,15 @@
       <el-menu-item index="2-2" @click="addTask()">文章列表</el-menu-item>
     </el-sub-menu>
   </el-menu>
+
+  
+
     <!-- 工具 -->
     <div class="article-tools">
       <el-form :inline="true" :model="formInline" class="demo-form-inline">
         <el-form-item >
           <el-input
-            v-model="formInline.title"
+            v-model="formInline.title" 
             placeholder="请输入关键词"
           ></el-input>
         </el-form-item>
@@ -31,9 +34,15 @@
         </el-form-item>
       </el-form>
     </div>
+
+
+
     <!-- 表格 -->
   <div class="detail">
-    <el-table :data="articleCats" stripe style="width: 100%">
+    <el-table :data="articleCats" stripe style="width: 100%" 
+     :header-cell-style="{ textAlign: 'center' }"
+     :cell-style="{ textAlign: 'center' }">
+     
       <!-- 列定义 -->
       <el-table-column prop="title" label="文章标题" align="center" />
       <el-table-column  label="操作" >
@@ -61,10 +70,14 @@
       </div>
     </div>
   </el-dialog>
+
+
+
 </template>
   
-  <script>
+  <script >
 import { defineComponent } from "vue";
+import { ref } from 'vue'
 import {
   ArticleCatPage,
   ArticleCatDelId,
@@ -74,6 +87,8 @@ import {
 } from "../../http/articleCat5";
 import { ElMessageBox, ElMessage } from "element-plus";
 import { cloneDeep } from "lodash-es";
+
+const currentDate = ref(new Date());
 
 export default defineComponent({
   data() {
@@ -283,18 +298,19 @@ export default defineComponent({
 }
 
 .article-tools{
-  margin-top:1em;
-  margin-left:25%;
+  text-align: center;
+  margin-top:2ch;
 }
 
 .detail{
   width:100%;
-  text-align: center;
+  margin-top:3ch;
 }
 
 .flex-grow {
   flex-grow: 1;
 }
+
 
 
 </style>
